@@ -102,6 +102,7 @@ async function startServer(gasket) {
 
       debug(errorMessage, errors);
       logger.error(errorMessage.message);
+      await gasket.exec('onCreateServersErrors', errors);
       return;
     }
 
